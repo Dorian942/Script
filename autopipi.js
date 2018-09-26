@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AutoPipi
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      2.2
 // @description  try to take over the world!
 // @author       You
 // @match        https://ts19.travian.fr/*
@@ -11,37 +11,41 @@
 (function() {
     'use strict';
 
-    if(document.getElementById("raidList")){
+if(document.getElementById("raidList")){
              //let LancerPillage = document.querySelector('input[type="button"][value="Lancer le pillage"]');
-if(document.querySelector('.attack.att2')&&document.querySelector('.carry.full'))
+/*if(document.querySelector('.attack.att2')&&document.querySelector('.carry.full'))
 {
     //alert('test');
-}
-
-    setInterval(function() {
-          window.location.reload(false);
-                }, 300000);
+}*/
 
     (function loop() {
-    var rand = Math.round(Math.random() * (600000 - 0)) + 0;
+    var rand = Math.random() * (900000 - 600000) + 600000;
     setTimeout(function() {
 
         document.getElementById("raidListMarkAll223").checked = true;
         if (typeof document.getElementById("raidListMarkAll223").onclick == "function") {
             document.getElementById("raidListMarkAll223").onclick.apply(document.getElementById("raidListMarkAll223"));
-}
+        }
         if(document.getElementById("raidListMarkAll223").checked == true)
         {
            var button = document.querySelector('button[value="Lancer le pillage"]');
-           button.click();
+          // window.open(button.click());
+            button.click();
 
         }
-    loop();
+        document.getElementById("raidListMarkAll755").checked = true;
+        if (typeof document.getElementById("raidListMarkAll755").onclick == "function") {
+            document.getElementById("raidListMarkAll755").onclick.apply(document.getElementById("raidListMarkAll755"));
+        }
+        if(document.getElementById("raidListMarkAll755").checked == true)
+        {
+           var button1 = document.querySelector('button[value="Lancer le pillage"]');
+           button1.click();
+        }
+
+
+        loop();
     }, rand);
-
-
-
-
 }());
 
            }
