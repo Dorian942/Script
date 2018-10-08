@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AutoPipi
 // @namespace    http://tampermonkey.net/
-// @version      2.2
+// @version      1.2
 // @description  try to take over the world!
 // @author       You
 // @match        https://ts19.travian.fr/*
@@ -40,6 +40,8 @@ if(document.getElementById("raidList")){
         if(document.getElementById("raidListMarkAll755").checked == true)
         {
            var button1 = document.querySelector('button[value="Lancer le pillage"]');
+           onclick="window.open(this.href,'popUpWindow','height=400,width=600,left=10,top=10,,scrollbars=yes,menubar=no'); return false;"
+
            button1.click();
         }
 
@@ -49,4 +51,7 @@ if(document.getElementById("raidList")){
 }());
 
            }
+    else{
+        window.location.reload(1);
+    }
 })();
